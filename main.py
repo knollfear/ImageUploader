@@ -87,9 +87,13 @@ def get():
 @rt('/signedurl')
 def get(request:Request):
     object_name = request.query_params['filename']
-    signedURL = s3_client.generate_presigned_url('get_object',
+    # Could also persist information about the image here.
+    # Getting a callback after successful upload is an opportunity to do many things.
+    signedURL = s3_client.generate_presigned_url(
+        'get_object',
         Params={'Bucket': BUCKET_NAME, 'Key': object_name},
-        ExpiresIn=3600)
+        ExpiresIn=3600
+    )
     return Div(
         Img(src=f"{signedURL}"),
             Div(
