@@ -1,10 +1,6 @@
-import os
-
 from fasthtml.common import *
 import boto3
 import os
-import urllib.parse
-from pathlib import Path
 
 ACCESS_KEY_ID= os.environ.get('ACCESS_KEY_ID')
 SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY')
