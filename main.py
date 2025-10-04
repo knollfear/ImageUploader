@@ -2,10 +2,10 @@ from fasthtml.common import *
 import boto3
 import os
 
-ACCESS_KEY_ID= os.environ.get('ACCESS_KEY_ID')
-SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY')
-BUCKET_NAME = os.environ.get('BUCKET_NAME')
-ENDPOINT_URL = os.environ.get('ENDPOINT_URL')
+ACCESS_KEY_ID= os.environ.get('AWS_ACCESS_KEY_ID')
+SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
+ENDPOINT_URL = os.environ.get('AWS_ENDPOINT_URL')
 
 
 s3_client = boto3.client('s3', endpoint_url=ENDPOINT_URL, aws_access_key_id=ACCESS_KEY_ID, aws_secret_access_key=SECRET_ACCESS_KEY)
